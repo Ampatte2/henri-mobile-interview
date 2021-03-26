@@ -12,3 +12,11 @@ export const todoActionTypes = {
     reset: 'RESET_TODOS',
     add: 'ADD_TODOS'
 }
+
+export const feedActionTypes = {
+    initialize: 'INITIALIZE_FEED',
+    delete: 'DELETE_POST',
+    create: 'CREATE_POST',
+    selectPost: 'SELECT_POST',
+    comments: 'GET_COMMENTS'
+}

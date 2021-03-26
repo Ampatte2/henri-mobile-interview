@@ -8,7 +8,7 @@ const users = (state = [], action) => {
         ]
       case userActionTypes.addAvatars:
         return state.map((user, index) => {
-          user.profile_picture = action.data[index];
+          user.profile_picture = action.data[index].photo;
           return user
         })
       default:

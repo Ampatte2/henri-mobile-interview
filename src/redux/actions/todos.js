@@ -6,7 +6,7 @@ export const addTodos = (todos) => ({
 })
 
 export const initializeTodos = function (dispatch, getState, instance) {
-        return instance.get('/todos?_limit=10').then(({ data }) => {
+        return instance.get('/todos?_limit=20').then(({ data }) => {
             dispatch(addTodos(data))
         })
 }

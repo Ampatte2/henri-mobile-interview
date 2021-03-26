@@ -8,13 +8,13 @@ const todos = (state = [], action) => {
         ]
       case todoActionTypes.complete:
         return state.map(todo =>
-          ((todo.id === action.id)
+          ((todo.id === action.data)
             ? { ...todo, completed: true }
             : todo)
         )
       case todoActionTypes.reset:
         return state.map(todo =>
-          ((todo.id === action.id)
+          ((todo.id === action.data)
             ? { ...todo, completed: false }
             : todo)
         )

@@ -6,8 +6,8 @@ import axios from 'axios';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import reducers from './redux/reducers';
-import { initializeTodos, initializeUsers, initializeFeed, addAvatars } from './redux/actions';
-import { Feed, Users, Todos } from './tabs';
+import { initializeTodos, initializeUsers, initializeFeed } from './redux/actions';
+import { Users, Todos } from './tabs';
 import { FeedStackNavigator } from './navigation/FeedScreenStack';
 
 import { Tab } from './components/TabBar';

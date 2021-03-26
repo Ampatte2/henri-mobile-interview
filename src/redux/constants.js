@@ -17,6 +17,5 @@ export const feedActionTypes = {
     initialize: 'INITIALIZE_FEED',
     delete: 'DELETE_POST',
     create: 'CREATE_POST',
-    selectPost: 'SELECT_POST',
-    comments: 'GET_COMMENTS'
+    selectPost: 'SELECT_POST'
 }

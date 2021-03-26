@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Text, TextInput, View, Button } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import { createPost } from '../../redux/actions';
@@ -11,13 +11,26 @@ export const AddPost = () => {
     const [title, setTitle] = useState();
     const [body, setBody] = useState();
 
+    /**
+    * updates title 
+    *@param {string} text 
+    **/
     const updateTitleText = (text) => {
         setTitle(text)
     }
 
+    /**
+    * updates body 
+    *@param {string} text 
+    **/
     const updateBodyText = (text) => {
         setBody(text)
     }
+
+    /**
+    * save to database/store
+    * navigate back
+    **/
     const savePost = async () => {
         try {
             const randomId = Math.floor(Math.random() * 10)

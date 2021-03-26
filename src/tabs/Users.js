@@ -1,14 +1,19 @@
 import React, { useLayoutEffect } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux'
-import { Text, ScrollView, Button, Image, View } from 'react-native';
+import { Text, ScrollView, Image, View } from 'react-native';
 import { addAvatars } from '../redux/actions';
 
 export const Users = () => {
     const users = useSelector(state => state.users);
     const dispatch = useDispatch();
+
     useLayoutEffect(() => {
-        const getUI = async () => {
+        /**
+        * fetches face images from uifaces
+        * on success adds avatars to user profiles
+        **/
+        const fetchStockFaceImages = async () => {
             try {
               const result = await axios.get('https://uifaces.co/api?limit=10', {
                 method: 'GET',
@@ -23,20 +28,26 @@ export const Users = () => {
               console.log(e)
             }
           }
-          getUI();
+          fetchStockFaceImages();
     }, [])
 
+    /**
+    * displays users information
+    *@param {Array<user>} users 
+    **/
     const renderUsers = () => {
         return users.map(user => (
             <View style={{ padding: 10, flex: 1, flexWrap: 'wrap' }} key={user.id}>
                 <Text>{user.name}</Text>
                 <Text>{user.email}</Text>
-                <Image source={{ uri: user.photo }} style={{ width: 200, height: 200 }} />
+                <Text>{user.phone}</Text>
+                <Image source={{ uri: user.profile_picture }} style={{ width: 200, height: 200 }} />
             </View>
         ))
     }
     return (
         <ScrollView style={{ padding: 10, flex: 1 }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 20, textAlign: 'center' }}>Users</Text>
             {renderUsers()}
         </ScrollView>
     )

@@ -9,7 +9,6 @@ export const Feed = () => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
     const feed = useSelector(state => state.feed);
-    const users = useSelector(state => state.users);
 
     /**
     *@param {number} id - the id of selected post to navigate to
@@ -19,6 +18,9 @@ export const Feed = () => {
         navigation.navigate('View Post')
     }
 
+    /**
+    * navigates to add post screen 
+    **/
     const navigateToAdd = () => {
         navigation.navigate('Add Post')
     }

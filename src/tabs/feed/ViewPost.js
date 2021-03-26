@@ -76,6 +76,7 @@ export const ViewPost = () => {
                 (<View style={{ flex: 1, flexDirection: 'column', padding: 10 }}>
                     <Text style={{ marginBottom: 20, fontWeight: 'bold' }}>{comment.name}</Text>
                     <Text >{comment.body}</Text>
+                    <Text style={{ marginTop: 20 }}>{comment.email}</Text>
                 </View>)
             )
         }
